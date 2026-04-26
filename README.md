@@ -1,41 +1,67 @@
-# Prediction-of-Product-Sales
+# Product Sales Prediction using Machine Learning
 
-## Project Description
+## Project Overview
 
-This project explores a dataset of product and outlet information to understand the factors that influence item sales. The goal is to analyze patterns in the data and identify key variables that affect sales performance.
+This project aims to predict product sales based on item characteristics and outlet features. The goal is to help businesses understand the key factors that influence sales performance and build a model that can support data-driven decision-making.
 
 ---
 
-## Key Visualizations
+## Key Insights from the Data
 
-### 1. Distribution of Item Outlet Sales
+### 1. Distribution of Product Sales
 <img width="571" height="455" alt="histo" src="https://github.com/user-attachments/assets/586d5fe5-4a77-4c95-9f16-07df3f786afe" />
 
-This histogram shows the distribution of item sales across all products.
-
-**Insight:**
-Most sales values are concentrated at lower ranges, with a long tail toward higher values. This indicates that high sales are less common, while most products generate moderate sales.
+Most products have low to moderate sales, while only a small number of products achieve very high sales. This indicates a right-skewed distribution and suggests that high-performing products are relatively rare.
 
 ---
 
 ### 2. Sales by Outlet Type
 <img width="589" height="546" alt="box" src="https://github.com/user-attachments/assets/76e4fd0a-dfdc-49f9-b9ca-c74ea9aec661" />
 
-This boxplot shows how sales vary across different outlet types.
-
-**Insight:**
-Supermarket Type3 tends to have higher sales compared to other outlet types, while Grocery Stores generally have lower sales. This suggests that outlet type plays an important role in sales performance.
+Sales vary significantly by outlet type. Supermarket Type3 consistently shows higher sales, while Grocery Stores have the lowest. This highlights the strong impact of store type on sales performance.
 
 ---
 
-## Additional Findings
+## Model Summary
 
-* Item_MRP has a moderate positive correlation with sales (~0.57)
-* Most other numerical features have weak relationships with sales
-* The dataset is imbalanced, with most outlets being Supermarket Type1
+Several models were tested to predict product sales, including:
+
+- Linear Regression
+- Random Forest (Default)
+- Random Forest (Tuned)
+
+### Final Model: Tuned Random Forest Regressor
+
+The tuned Random Forest model was selected as the best-performing model.
+
+### Performance:
+
+- **R² Score (Test):** 0.59  
+- **Mean Absolute Error (MAE):** ~737  
+
+### Interpretation:
+
+- The model explains approximately **59% of the variation in sales**
+- On average, predictions differ from actual sales by about **737 units**
 
 ---
 
-##  Conclusion
+## Why This Model?
 
-Price and outlet type are key factors influencing sales. Further analysis or modeling could improve prediction accuracy.
+- Linear Regression underfit the data and failed to capture complex relationships  
+- Default Random Forest overfit the training data  
+- Tuned Random Forest achieved the best balance between accuracy and generalization  
+
+---
+
+## Conclusion
+
+Price and outlet type are the most influential factors affecting product sales. The final model provides a reasonable level of prediction accuracy and can be used to support business decisions related to pricing strategies and store performance.
+
+---
+
+## Next Steps
+
+- Improve model performance by testing additional algorithms
+- Perform feature engineering to capture more complex patterns
+- Deploy the model in a real-world application for business use
